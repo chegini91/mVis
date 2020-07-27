@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import at.tugraz.cgv.multiviewva.gui.charts.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1000.0" prefHeight="600.0"
+            prefWidth="1000.0" xmlns:tugraz.ivis.parcoord.chart="http://javafx.com/javafx/8.0.112"
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tugraz.ivis.parcoord.ParcoordController">
+    <children>
+        <BorderPane layoutX="218.0" layoutY="84.0" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="open" mnemonicParsing="false" onAction="#onFileOpen" text="Open..."/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Chart">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onResetBrushing" text="Reset brushing"/>
+                                <RadioMenuItem fx:id="toggle_legend" disable="true" text="Legend" selected="true"
+                                               onAction="#toggleLegend"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onShowInfo" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center>
+                <ParallelCoordinatesChart fx:id="parcoordChart" title="no file chosen yet ..."
+                                          BorderPane.alignment="CENTER">
+                </ParallelCoordinatesChart>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import at.tugraz.cgv.multiviewva.gui.charts.*?>
+
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="at.tugraz.cgv.multiviewva.controllers.MainFXController">
+
+
+    <children>
+
+
+        <BorderPane fx:id="mainBorderPane" layoutX="218.0" layoutY="84.0" prefHeight="600.0" prefWidth="1000.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="open" onAction="#loadDataAction" mnemonicParsing="false"
+                                          text="Open..."/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Chart">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Reset brushing"/>
+                                <RadioMenuItem fx:id="toggle_legend" disable="true" text="Legend" selected="true"
+                                />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Preference">
+                            <items>
+                                <Menu fx:id="clusterType" mnemonicParsing="false" text="Clustering"/>
+                                <Menu fx:id="drType" mnemonicParsing="false" text="Dimensionality Reduction"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+
+
+            <bottom>
+                <Pane fx:id="spmPane" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <fx:include fx:id="spm" source="MatrixScatterPlot.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+                <Pane fx:id="drPane" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <fx:include fx:id="similarityMap" source="SimilarityMap.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+                <Pane fx:id="contextMenuPane" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <fx:include fx:id="contextMenu" source="ContextMenu.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+                <!--                <Pane fx:id="dataLoad" GridPane.columnIndex="1" GridPane.rowIndex="0" >-->
+                <!--                    <fx:include fx:id="dataLoadMenu" source="DataModelLoad.fxml" />-->
+                <!--                    <padding>-->
+                <!--                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5" />-->
+                <!--                    </padding>-->
+                <!--                </Pane>-->
+
+                <Pane fx:id="LabelPane" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <fx:include fx:id="labelMenu" source="LabelPane.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+                <Pane fx:id="ConsolePane" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <fx:include fx:id="consoleArea" source="ConsolePane.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+                <Pane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <fx:include fx:id="spMain" source="ScatterPlot.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+
+                <Pane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" disable="true"
+                      fx:id="scatterPaneRight" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <fx:include fx:id="spRight" source="ScatterPlot.fxml"/>
+                    <padding>
+                        <Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                </Pane>
+
+
+                <Pane fx:id="informationPane" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <ParallelCoordinatesChart fx:id="parcoordChart"
+                                              BorderPane.alignment="CENTER">
+                    </ParallelCoordinatesChart>
+
+                    <HBox fx:id="gazeCtrlHBox" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <padding>
+                            <javafx.geometry.Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                        </padding>
+                        <children>
+
+                            <Button fx:id="reorder" mnemonicParsing="false" prefWidth="100.0" text="Reorder"/>
+                            <Spinner fx:id="stepSpinner" prefWidth="80.0">
+                                <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory min="1" max="10"/>
+                                </valueFactory>
+                            </Spinner>
+
+                            <Label styleClass="radio-button-title-label" HBox.hgrow="ALWAYS">Type:
+                            </Label>
+
+                            <RadioButton fx:id="exploration" selected="false" styleClass="custom-jfx-radio-button"
+                                         text="Exploration">
+                                <toggleGroup>
+                                    <ToggleGroup fx:id="typeGroup"/>
+                                </toggleGroup>
+                            </RadioButton>
+                            <RadioButton fx:id="organisation" selected="true"
+                                         styleClass="custom-jfx-radio-button" text="Organization"
+                                         toggleGroup="$typeGroup"/>
+
+                            <Label styleClass="radio-button-title-label" HBox.hgrow="ALWAYS">Ordering:
+                            </Label>
+
+                            <RadioButton fx:id="center" selected="false" styleClass="custom-jfx-radio-button"
+                                         text="Center to corner">
+                                <toggleGroup>
+                                    <ToggleGroup fx:id="orderingGroup"/>
+                                </toggleGroup>
+                            </RadioButton>
+                            <RadioButton fx:id="right" selected="true"
+                                         styleClass="custom-jfx-radio-button" text="Right to left"
+                                         toggleGroup="$orderingGroup"/>
+                            <RadioButton fx:id="left" selected="false"
+                                         styleClass="custom-jfx-radio-button" text="Left to right"
+                                         toggleGroup="$orderingGroup"/>
+
+                        </children>
+                    </HBox>
+                </Pane>
+
+            </bottom>
+
+        </BorderPane>
+    </children>
+</AnchorPane>

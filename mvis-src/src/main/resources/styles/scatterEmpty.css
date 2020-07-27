@@ -1,0 +1,37 @@
+.axis-tick-mark, 
+.axis-minor-tick-mark, 
+.chart-vertical-grid-lines, 
+.chart-horizontal-grid-lines, 
+.chart-vertical-zero-line, 
+.chart-horizontal-zero-line  {
+    /*-fx-stroke: transparent;*/
+}
+
+.chart-plot-background {
+    -fx-border-color: black; 
+    -fx-border-style: solid; 
+    -fx-border-width: 1px; 
+    -fx-border-insets: 0 0 0 0
+;}
+
+.chart {
+    -fx-padding: 0.0px;
+}
+.chart-content {
+    -fx-padding: 0.0px;
+}
+
+
+/*.chart-plot-background {
+    -fx-background-color: #e2ecfe;
+}
+.chart-alternative-row-fill {
+    -fx-fill: #e2ecfe;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}*/
+
+.chart-symbol { /* solid circle */
+    -fx-background-radius: 1px;
+    -fx-padding: 1px;
+}

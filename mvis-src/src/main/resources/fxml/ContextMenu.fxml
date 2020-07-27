@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="contextMenu" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.tugraz.cgv.multiviewva.controllers.ContextMenuController">
+    <children>
+        <HBox fx:id="hbox" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <javafx.geometry.Insets bottom="2.5" left="2.5" right="2.5" top="2.5" />
+            </padding>
+            <children>
+                <TabPane prefWidth="230.0" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Sliding window">
+                            <content>
+                                <VBox spacing="30.0">
+                                    <children>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Scale step" />
+                                                <Slider fx:id="scaleStep" majorTickUnit="0.1" max="1.0" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="0.1" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        
+                                        <HBox prefHeight="38.0" prefWidth="130.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Move step" />
+                                                <Slider fx:id="moveStep" majorTickUnit="0.05" max="0.5" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="0.1" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Size max" />
+                                                <Slider fx:id="sizeMax" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Size min" />
+                                                <Slider fx:id="sizeMin" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="0.1" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <Button fx:id="preprocess" onAction="#handleOnProcessAction" prefHeight="40" prefWidth="125" text="Pre-process" />
+                                        
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                                    </padding>
+                                </VBox>
+
+                            </content>
+                        </Tab>
+                        <Tab text="Filtering">
+                            <content>
+                                <VBox spacing="30.0">
+                                    <children>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Max model distance" />
+                                                <Slider fx:id="maxModelDistance" majorTickUnit="5" max="100" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="30" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="38.0" prefWidth="130.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Max shape distance" />
+                                                <Slider fx:id="maxShapeDistance" majorTickUnit="5" max="100" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="30" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Min P1 value" />
+                                                <Slider fx:id="minP1Value" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="0.5" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Min P2 value" />
+                                                <Slider fx:id="minP2Value" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="0.5" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                                    </padding>
+                                </VBox>
+                            </content>
+                        </Tab>
+                        <Tab text="Weights">
+                            <content>
+                                <VBox spacing="30.0">
+                                    <children>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Model weight" />
+                                                <Slider fx:id="modelWeight" majorTickUnit="0.1" max="1.0" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1.0" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="38.0" prefWidth="130.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="Shape weight" />
+                                                <Slider fx:id="shapWheight" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1.0" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="P1 weight" />
+                                                <Slider fx:id="p1Weight" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label styleClass="item-title" text="P2 weight" />
+                                                <Slider fx:id="p2Weight" majorTickUnit="0.1" max="1" min="0" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1.0" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+                                    </padding>
+                                </VBox>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+                <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <padding>
+                        <javafx.geometry.Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                    </padding>
+                    <children>
+                        <Button fx:id="search" onAction="#handleOnSearchAction" prefHeight="40" prefWidth="125" text="Search" />
+                        <ToggleButton fx:id="brushing" onAction="#handleOnBrushingAction" prefHeight="40" prefWidth="125" selected="false" text="Brushing" />
+                        <ToggleButton fx:id="doubleLens" onAction="#handleOnDoubleAction" prefHeight="40" prefWidth="125" selected="true" text="Regression model" />
+                        <ToggleButton fx:id="closeMenu" onAction="#handleOnCloseAction" prefHeight="40" prefWidth="125" selected="true" text="Advanced" />
+                        <VBox spacing="10">
+                            <children>
+
+                                <Label styleClass="radio-button-title-label">Visualisation</Label>
+
+                                <RadioButton fx:id="union" selected="false" text="Union" styleClass="custom-jfx-radio-button">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="visGroup"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="subset" selected="true"
+                                             text="Best" toggleGroup="$visGroup" styleClass="custom-jfx-radio-button"/>
+                                <RadioButton fx:id="all" selected="false"
+                                             text="Aggregation" toggleGroup="$visGroup" styleClass="custom-jfx-radio-button"/>
+                            </children>
+                        </VBox>
+                        <VBox spacing="10">
+                            <children>
+
+                                <Label styleClass="radio-button-title-label">Color coding based on</Label>
+
+                                <RadioButton fx:id="model" selected="false" text="Model" styleClass="custom-jfx-radio-button">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="colorGroup"/>
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="shape" selected="false"
+                                             text="Shape" toggleGroup="$colorGroup" styleClass="custom-jfx-radio-button"/>
+                                <RadioButton fx:id="combination" selected="true"
+                                             text="Combination" toggleGroup="$colorGroup" styleClass="custom-jfx-radio-button"/>
+                            </children>
+                        </VBox>
+                        <Label styleClass="item-title" text="Regression degree" />
+                        <Slider fx:id="regressionDegreeSlider" majorTickUnit="1" max="4" min="1" orientation="HORIZONTAL" showTickLabels="true" showTickMarks="true" value="1" HBox.hgrow="ALWAYS" />
+                        <Slider fx:id="searchSlider" majorTickUnit="1" max="100" min="0" orientation="HORIZONTAL" prefHeight="0" prefWidth="0" value="0" visible="false">
+                        </Slider>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

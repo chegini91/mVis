@@ -1,0 +1,100 @@
++++ Labels
+- Change label name
+- Change label color
+* Label color chaning without knowing why
+- Remove label
+- Multiple labels adding automatically
+- reset all labelling
+- Add disable when nothing is chose
+- If it is labelled another shape than circle
+- If label is unkwon then consider labelling it again
+- Show the number of records on the label
+- visable/invisible records
+
++++ Parallel coordinates
+- get rid of left and right
+- Laso on Parallel coordinates
+- On hover: bright red instead of black
+- click: slightly dull red
+- hovering: see values
+- categorical dims
+- overriding the range
+- histogram
+- deselect the selected when unbrushing (the black lines reamin selected)
+- better dragging effect when changing order of attr
+- Dont show the exact number on parallel coordinates
+
++++ scatterplot
+- Show real value instead of normalized one
+
++++ General
+- add search lens somewhere (maybe a option to change the function?)
+- undo/redo
+- make dataset standard format
+- loading new dataset make the application crash
+- Can change scatterplot matrix order
+- Putting in/out dimensions in parallel coordinates and scatterplot
+
+
+
+
+----------------------- Done -----------------------
+
+Feature: when clicking on the node, we show the possibilties of classes
+ - - - - - - - - - - - - - - - - - - -
+|                                     |
+| Shape   "Label Name"  20 -   /   +  |
+|                                     |
+ - - - - - - - - - - - - - - - - - - -
+
+ 
++++Scatterplot
++ load all data as just one series with the main color
+ 
+
++Data loading
+- Load labels (called tag)
+
+
+----------------------- Backlog -----------------------
+
+
++Scatterplot
+- Label show mouseover
+- Can select just one record
+- Can select series
+- Maximise
+- Mouse events
+- zoom in/zoom out
+- lens bug
+
++Scatterplot matrix
+- Can select series
+- Mouseover show preview?
+- Maximise?
+- Mouse events
+
++Parallel coordinates
+-+++ Brushing
+- series
+- load label also
+- Show label
+
++Grid
+- Show grid
+
++Interaction framework
+- set of events that store total number of interactions etc.
+
++Interaction with eye-tracking
+- add device and listeners to it
+
+
+Events
+scatterplot matrix : select a scatterplot, mouseover a scatterplot
+scatterplot
+
+
+on Scatterplot
+- regression not on the right place
+- regression over plot

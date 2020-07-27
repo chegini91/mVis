@@ -1,0 +1,26 @@
+.axis-tick-mark, 
+.axis-minor-tick-mark, 
+.chart-vertical-grid-lines, 
+.chart-horizontal-grid-lines, 
+.chart-vertical-zero-line, 
+.chart-horizontal-zero-line  {
+    -fx-stroke: transparent;
+}
+
+.chart-alternative-row-fill, .chart-alternative-column-fill{
+    -fx-fill: #f5f5f5;
+}
+
+.chart {
+    -fx-padding: 0.0px;
+}
+.chart-content {
+    -fx-padding: 0.0px;
+}
+
+
+.chart-symbol { /* solid circle */
+    -fx-background-color: #E1611F;
+    -fx-background-radius: 20px;
+    -fx-padding: 20px;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="at.tugraz.cgv.multiviewva.controllers.DataModelLoadController">
+
+    <children>
+        <HBox fx:id="hbox" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <padding>
+                <javafx.geometry.Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+            </padding>
+            <children>
+                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0">
+
+                    <children>
+                        <VBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <padding>
+                                <javafx.geometry.Insets bottom="2.5" left="2.5" right="2.5" top="2.5"/>
+                            </padding>
+                            <children>
+                                <!--                                <HBox spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
+                                <!--                                    <children>-->
+                                <!--                                        <Label text="Path:" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                <!--                                        <TextField AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />-->
+                                <!--                                    </children>-->
+                                <!--                                </HBox>-->
+
+                                <HBox spacing="10">
+                                    <children>
+
+                                        <Label styleClass="radio-button-title-label" HBox.hgrow="ALWAYS">Delimiter:
+                                        </Label>
+
+                                        <RadioButton fx:id="tab" selected="false" styleClass="custom-jfx-radio-button"
+                                                     text="tab">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="delimiterGroup"/>
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="semicolon" selected="true"
+                                                     styleClass="custom-jfx-radio-button" text="semicolon (;)"
+                                                     toggleGroup="$delimiterGroup"/>
+                                        <RadioButton fx:id="comma" selected="false" styleClass="custom-jfx-radio-button"
+                                                     text="comma (,)" toggleGroup="$delimiterGroup"/>
+                                    </children>
+                                </HBox>
+
+                                <CheckBox fx:id="labellingDemo" mnemonicParsing="false" text="Labelling Demo"/>
+                                <CheckBox fx:id="pacoordGaze" mnemonicParsing="false"
+                                          text="Parallel Coordinates Gaze Demo"/>
+
+                                <HBox spacing="50" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="cancelB" mnemonicParsing="false" prefWidth="100.0" text="Cancel"
+                                                HBox.hgrow="ALWAYS"/>
+                                        <Button fx:id="loadB" mnemonicParsing="false" prefWidth="100.0" text="Load"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+
+                </AnchorPane>
+            </children>
+        </HBox>
+    </children>
+
+</AnchorPane>

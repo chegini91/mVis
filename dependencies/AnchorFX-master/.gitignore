@@ -1,54 +1,6 @@
-# NetBeans specific #
-trunk/nbproject/
-trunk/build/
-trunk/nbbuild/
-trunk/dist/
-trunk/nbdist/
-trunk/nbactions.xml
-trunk/nb-configuration.xml
-
-
-# Class Files #
-*.class
-
-# Package Files #
-*.war
-*.ear
-
-## Core latex/pdflatex auxiliary files:
-*.aux
-*.lof
-*.log
-*.lot
-*.lbl
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-*.bbl
-*.brf
-*.blg
-*.log
-*.gz
-*.aux
-*.log
-*.bbl
-*.blg
-*.synctex
-*.tcp
-*.tps
-*.bcf
-*.run.xml
-
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
-
-#Classes Folder
-mvis-src/classes
 
 # Folder config file
 Desktop.ini

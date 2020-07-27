@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import at.tugraz.cgv.multiviewva.gui.charts.*?>
+<?import com.jfoenix.controls.*?>
+
+<BorderPane fx:controller="at.tugraz.cgv.multiviewva.controllers.ScatterPlotController"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+    
+
+            fx:id="scatterPane"
+            onMouseDragged="#handleMouseDragged" onMouseReleased="#handleMouseReleased"  onMousePressed="#handleMouseClicked"
+            >
+
+        
+</BorderPane>
