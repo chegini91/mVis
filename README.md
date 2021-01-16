@@ -19,9 +19,9 @@ You can either compile by IDE or command line (maven).
 ## Netbeans
 
 Import these projects from dependencies folder into the IDE (e.g. Netbeans 10):
-  - AnchorFX
-  - ComplexDataObject
-  - DMandML
+  - AnchorFX (original repo at https://github.com/alexbodogit/AnchorFX)
+  - ComplexDataObject (original repo at https://github.com/TKnudsen/ComplexDataObject)
+  - DMandML (original repo at https://github.com/TKnudsen/DMandML)
 
 Later, import the main project from mvis-src and right click then click on the build with dependencies. Run the Main.java in at.tugraz.cgv.multiviewva.javafxapplication package.
 
