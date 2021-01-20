@@ -87,3 +87,21 @@ cd mvis\mvis-src
 ```
 
 The mVis.ico file can be found in the repository.
+
+# Paper and Video
+
+Please cite this paper if you wish:
+
+Mohammad Chegini, Jürgen Bernard, Philip Berger, Alexei Sourin, Keith Andrews, Tobias Schreck,
+Interactive labelling of a multivariate dataset for supervised machine learning using linked visualisations, clustering, and active learning,
+Visual Informatics,
+Volume 3, Issue 1,
+2019,
+Pages 9-17,
+ISSN 2468-502X,
+https://doi.org/10.1016/j.visinf.2019.03.002.
+
+
+Link to youtube video:
+https://www.youtube.com/watch?v=_bQ_4zRyPPg
+
